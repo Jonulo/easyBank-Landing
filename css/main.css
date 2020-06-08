@@ -507,7 +507,7 @@ main {
 }
 .header__icon-menu {
   width: 40px;
-  background: url("../../assets/icon-hamburger.svg") no-repeat center;
+  background: url("../assets/icon-hamburger.svg") no-repeat center;
 }
 
 main {
@@ -528,7 +528,7 @@ main {
   position: relative;
   margin: 0 -1rem;
   margin-bottom: 20px;
-  background: url("../../assets/image-mockups.png") center bottom no-repeat, url("../../assets/bg-intro-mobile.svg") center no-repeat;
+  background: url("../assets/image-mockups.png") center bottom no-repeat, url("../assets/bg-intro-mobile.svg") center no-repeat;
   background-size: 345px, cover;
 }
 .main-wrap__intro {
