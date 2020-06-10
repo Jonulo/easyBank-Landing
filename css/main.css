@@ -518,6 +518,7 @@ main {
   height: auto;
   max-width: 100%;
   overflow: hidden;
+  background-color: #fafafa;
 }
 
 .main-wrap {
@@ -563,7 +564,7 @@ main {
 
 .info {
   width: 100%;
-  background-color: #fafafa;
+  background-color: #f3f4f6;
   padding: 2.5em 1em;
   text-align: center;
 }
@@ -599,6 +600,55 @@ main {
   font-size: 0.8em;
   padding: 0 0.9em;
   text-align: center;
+}
+
+.latest-articles {
+  width: 100%;
+  background-color: #fafafa;
+  padding: 2.5em 1em;
+  padding-top: 3em;
+  text-align: center;
+}
+.latest-articles h2 {
+  color: #2d314d;
+  font-weight: bold;
+  font-size: 1.8em;
+  padding: 0.5em 0;
+}
+.latest-articles .article-wrapper {
+  text-align: left;
+  border-radius: 5px;
+  margin: 1.5em 0;
+  background-color: white;
+}
+.latest-articles .article-wrapper img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+.latest-articles .article-wrapper .article {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+.latest-articles .article-wrapper .article__autor {
+  color: #9698a6;
+  font-weight: bold;
+  font-size: 0.6em;
+}
+.latest-articles .article-wrapper .article__autor::before {
+  content: "By ";
+}
+.latest-articles .article-wrapper .article__title {
+  color: #2d314d;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.5em 0;
+}
+.latest-articles .article-wrapper .article__description {
+  color: #9698a6;
+  font-weight: bold;
+  font-size: 0.7em;
 }
 
 /*# sourceMappingURL=main.css.map */

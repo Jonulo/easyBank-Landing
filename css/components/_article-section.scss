@@ -1,0 +1,40 @@
+.latest-articles {
+    width: 100%;
+    background-color: $primary-bkcolor;
+    padding: 2.5em $wrapper-space;
+    padding-top: 3em;
+    text-align: center;
+    h2 {
+        @include texts($primary1, 1.8em, bold);
+        padding: $wrapper-space/2 0;
+    }
+    .article-wrapper {
+        text-align: left;
+        border-radius: 5px;
+        margin: 1.5em 0;
+        background-color: $default-bkcolor;
+        img {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+        }
+        .article {
+            display: flex;
+            flex-direction: column;
+            padding: $wrapper-space*2;
+            &__autor {
+                @include texts($letter-color, 0.6em, bold);
+                &::before {
+                    content: "By ";
+                }
+            }
+            &__title {
+                @include texts($primary1, 0.9em, bold);
+                padding: 0.5em 0;
+            }
+            &__description {
+                @include texts($letter-color, 0.7em, bold);
+            }
+        }
+    }
+}

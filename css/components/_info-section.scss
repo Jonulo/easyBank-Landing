@@ -1,13 +1,13 @@
 .info {
     width: 100%;
-    background-color: $primary-bkcolor;
+    background-color: $secondary-bkcolor;
     padding: 2.5em $wrapper-space;
     text-align: center;
     h2 {
-        @include texts($primary1, 1.8em, bold)
+        @include texts($primary1, 1.8em, bold);
     }
     p {
-        @include texts($letter-color, 0.8em, bold)
+        @include texts($letter-color, 0.8em, bold);
     }
     &__feature {
         display: flex;
