@@ -509,6 +509,9 @@ main {
   width: 40px;
   background: url("../assets/icon-hamburger.svg") no-repeat center;
 }
+.header__icon-menu.expanded {
+  background: url("../assets/icon-close.svg") no-repeat center;
+}
 
 main {
   width: 100%;

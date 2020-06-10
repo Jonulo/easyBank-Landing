@@ -1,8 +1,11 @@
 function myFunction() {
-    var x = document.getElementById("bMenu");
-    if (x.style.display === "block") {
-        x.style.display = "none";
+    var menu = document.getElementById("bMenu");
+    var toggleIcon = document.getElementsByClassName("header__icon-menu")[0];
+    if (menu.style.display === "block") {
+        toggleIcon.classList.toggle('expanded');
+        menu.style.display = "none";
     } else {
-        x.style.display = "block";
+        toggleIcon.classList.toggle('expanded');
+        menu.style.display = "block";
     }
 }

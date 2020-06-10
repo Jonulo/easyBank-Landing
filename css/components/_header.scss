@@ -38,4 +38,7 @@
         width: 40px;
         background: url('../assets/icon-hamburger.svg') no-repeat center;
     }
+    &__icon-menu.expanded {
+        background: url('../assets/icon-close.svg') no-repeat center;
+    }
 }
