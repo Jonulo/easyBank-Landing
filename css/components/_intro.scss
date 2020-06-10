@@ -12,7 +12,7 @@ main {
     margin-bottom: 50px;
     &__images {
         position: relative;
-        margin: 0 -1rem;
+        margin: 0 -1em;
         margin-bottom: 20px;
         background: url('../assets/image-mockups.png') center bottom no-repeat,
         url('../assets/bg-intro-mobile.svg') center no-repeat;
@@ -25,7 +25,7 @@ main {
             @include texts($primary1, auto, bold);
         }
         p {
-            @include texts($letter-color, 1rem, 400)
+            @include texts($letter-color, 0.8em, bold)
         }
         button {
             width: 170px;
@@ -35,12 +35,7 @@ main {
             border: none;
             border-radius: 20px;
             padding: 10px 15px;
-            @include texts($primary-bkcolor, 1rem, 400);
+            @include texts($primary-bkcolor, 1em, 400);
         }
     }
-}
-.another-section {
-    width: 100%;
-    height: 250px;
-    background-color: $primary-bkcolor;
 }

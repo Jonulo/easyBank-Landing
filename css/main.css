@@ -529,7 +529,7 @@ main {
 }
 .main-wrap__images {
   position: relative;
-  margin: 0 -1rem;
+  margin: 0 -1em;
   margin-bottom: 20px;
   background: url("../assets/image-mockups.png") center bottom no-repeat, url("../assets/bg-intro-mobile.svg") center no-repeat;
   background-size: 325px, cover;
@@ -545,8 +545,8 @@ main {
 }
 .main-wrap__intro p {
   color: #9698a6;
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 0.8em;
 }
 .main-wrap__intro button {
   width: 170px;
@@ -558,13 +558,47 @@ main {
   padding: 10px 15px;
   color: #fafafa;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1em;
 }
 
-.another-section {
+.info {
   width: 100%;
-  height: 250px;
   background-color: #fafafa;
+  padding: 2.5em 1em;
+  text-align: center;
+}
+.info h2 {
+  color: #2d314d;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+.info p {
+  color: #9698a6;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.info__feature {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.info__feature img {
+  align-self: center;
+  width: 60px;
+  display: block;
+}
+.info__feature span {
+  color: #2d314d;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 20px 0;
+}
+.info__feature p {
+  color: #9698a6;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 0 0.9em;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

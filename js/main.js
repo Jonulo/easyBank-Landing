@@ -1,4 +1,4 @@
-function myFunction() {
+function toggleMenu() {
     var menu = document.getElementById("bMenu");
     var toggleIcon = document.getElementsByClassName("header__icon-menu")[0];
     if (menu.style.display === "block") {
