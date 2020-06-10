@@ -1,0 +1,31 @@
+.info {
+    width: 100%;
+    background-color: $primary-bkcolor;
+    padding: 2.5em $wrapper-space;
+    text-align: center;
+    h2 {
+        @include texts($primary1, 1.8em, bold)
+    }
+    p {
+        @include texts($letter-color, 0.8em, bold)
+    }
+    &__feature {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        img {
+            align-self: center;
+            width: 60px;
+            display: block;
+        }
+        span {
+            @include texts($primary1, 1.1em, bold);
+            padding: 20px 0;
+        }
+        p {
+            @include texts($letter-color, 0.8em, bold);
+            padding: 0 0.9em;
+            text-align: center;
+        }
+    }
+}
