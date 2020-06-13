@@ -28,15 +28,15 @@ main {
         p {
             @include texts($letter-color, 0.8em, bold)
         }
-        button {
-            width: 170px;
-            height: 45px;
-            margin: 15px 0;
-            background-image: linear-gradient(to right, $primary2 , $primary3);
-            border: none;
-            border-radius: 20px;
-            padding: 10px 15px;
-            @include texts($primary-bkcolor, 1em, 400);
-        }
     }
+}
+button {
+    width: 170px;
+    height: 45px;
+    margin: 15px 0;
+    background-image: linear-gradient(to right, $primary2 , $primary3);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    @include texts($primary-bkcolor, 1em, 400);
 }
