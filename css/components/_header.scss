@@ -3,11 +3,12 @@
     display: flex;
     justify-content: space-between;
     background-color: $default-bkcolor;
-    padding: 1.5em 1em;
+    padding: $wrapper-space 1.5em;
+    z-index: 3;
     .header-wrapper{
         display: none;
         position: absolute;
-        top: 70px;
+        top: 55px;
         left: 0;
         width: 100%;
         height: 100vh;
@@ -32,12 +33,61 @@
                 @include texts($letter-color, 1rem, bold);
             }
         }
+        @include breakpoint(laptop) {
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: auto;
+            height: auto;
+            background-image: none;
+            z-index: 0;
+            &__menu {
+                flex-direction: row;
+                width: auto;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                border-radius: 0px;
+                li {
+                    padding: 0 0.5em;
+                }
+            }
+        }
     }
     &__icon-menu {
         width: 40px;
         background: url('../assets/icon-hamburger.svg') no-repeat center;
+        margin: 0;
+        @include breakpoint(laptop) {
+            display: none;
+        }
     }
     &__icon-menu.expanded {
         background: url('../assets/icon-close.svg') no-repeat center;
+    }
+    button {
+        display: none;
+    }
+    @include breakpoint(tablet) {
+        padding: $wrapper-space $wrapper-space*2.5;
+    }
+    @include breakpoint(laptop) {
+        padding: $wrapper-space $wrapper-space*3;
+        img {
+            width: 120px;
+            height: 30px;
+        }
+        &__icon-menu {
+            display: none;
+        }
+        button {
+            display: block;
+            width: 140px;
+            height: 35px;
+            margin: 0;
+            padding: 0;
+            @include texts($primary-bkcolor, 0.8em, 400);
+        }
     }
 }

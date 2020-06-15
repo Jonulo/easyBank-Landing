@@ -2,8 +2,23 @@ main {
     width: 100%;
     height: auto;
     max-width: 100%;
-    overflow: hidden;
     background-color: $primary-bkcolor;
+    overflow-x: hidden;
+    .images-secondary {
+        display: none;
+    }
+    @include breakpoint(tablet) {
+        .images-secondary {
+            display: block;
+            position: absolute;
+            width: 400px;
+            height: 500px;
+            top: -10px;
+            right: -70px;
+            background: url('../assets/image-mockups.png') no-repeat;
+            background-size: 100%;
+        }
+    }
 }
 .main-wrap {
     position: relative;
@@ -20,6 +35,7 @@ main {
         background-size: 325px, cover;
     }
     &__intro {
+        flex-direction: column;
         text-align: center;
         margin-top: 20px;
         h1 {
@@ -28,6 +44,37 @@ main {
         p {
             @include texts($letter-color, 0.8em, bold)
         }
+    }
+    @include breakpoint(tablet) {
+        grid-template-columns: 1fr 380px;
+        grid-template-rows: 350px;
+        grid-template-areas: "info img";
+        padding: 0 $wrapper-space*3;
+        margin: 0;
+        &__images {
+            grid-area: img;
+            margin-right: -3em;
+            margin-bottom: 0;
+            background: url('../assets/bg-intro-desktop.svg') no-repeat;
+            background-size: 180%;
+            background-position: left -40px top -220px;
+        }
+
+        &__intro {
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            grid-area: info;
+            h1 {
+                @include texts($primary1, 1.5em, bold);
+            }
+            p {
+                @include texts($letter-color, 0.6em, bold)
+            }
+        }
+    }
+    @include breakpoint(desktop-lg) {
+        grid-template-rows: 650px;
     }
 }
 button {
