@@ -70,24 +70,26 @@
         display: none;
     }
     @include breakpoint(tablet) {
-        padding: $wrapper-space $wrapper-space*2.5;
+        padding: $wrapper-space $wrapper-space*3;
     }
     @include breakpoint(laptop) {
-        padding: $wrapper-space $wrapper-space*3;
+        padding: $wrapper-space $wrapper-space*5;
+        align-items: center;
         img {
-            width: 120px;
-            height: 30px;
+            width: 110px;
+            height: 20px;
         }
         &__icon-menu {
             display: none;
         }
         button {
             display: block;
-            width: 140px;
-            height: 35px;
             margin: 0;
             padding: 0;
-            @include texts($primary-bkcolor, 0.8em, 400);
+            @include buttons-style(140px, 35px, 0.8em);
         }
+    }
+    @include breakpoint(desktop-lg) {
+        padding: $wrapper-space $wrapper-space*10;
     }
 }

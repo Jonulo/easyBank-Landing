@@ -3,37 +3,80 @@
     background-color: $primary-bkcolor;
     padding: 2.5em $wrapper-space;
     padding-top: 3em;
-    text-align: center;
     h2 {
         @include texts($primary1, 1.8em, bold);
         padding: $wrapper-space/2 0;
     }
     .article-wrapper {
-        text-align: left;
-        border-radius: 5px;
-        margin: 1.5em 0;
-        background-color: $default-bkcolor;
-        img {
-            width: 100%;
-            height: 200px;
-            border-radius: 5px;
-        }
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         .article {
-            display: flex;
-            flex-direction: column;
-            padding: $wrapper-space*2;
-            &__autor {
-                @include texts($letter-color, 0.6em, bold);
-                &::before {
-                    content: "By ";
+            border-radius: 5px;
+            margin: $wrapper-space 0;
+            background-color: $default-bkcolor;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 200px;
+            }
+            .info-wrapper{
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                padding: 0 $wrapper-space*2 $wrapper-space*2 $wrapper-space*2;
+                &__autor {
+                    padding-top: $wrapper-space*2;
+                    @include texts($letter-color, 0.6em, bold);
+                    &::before {
+                        content: "By ";
+                    }
+                }
+                &__title {
+                    padding: 0.5em 0;
+                    @include texts($primary1, 0.9em, bold);
+                }
+                &__description {
+                    @include texts($letter-color, 0.7em, bold);
                 }
             }
-            &__title {
-                @include texts($primary1, 0.9em, bold);
-                padding: 0.5em 0;
-            }
-            &__description {
-                @include texts($letter-color, 0.7em, bold);
+        }
+    }
+    @include breakpoint(tablet) {
+        padding: 2.5em $wrapper-space*3;
+        h2 {
+            text-align: left;
+            padding: $wrapper-space/2 0;
+        }
+        .article-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            justify-content: center;
+            gap: 0 $wrapper-space;
+        }
+    }
+    @include breakpoint(laptop) {
+        padding: 2.5em $wrapper-space*5;
+    }
+    @include breakpoint(desktop-lg) {
+        padding: 2.5em $wrapper-space*10;
+        .article-wrapper {
+            display: flex;
+            flex-direction: row;
+            .article {
+                margin: 40px 20px 40px 0px;
+                .info-wrapper {
+                    &__autor {
+                        @include texts($letter-color, 0.8em, bold);
+                    }
+                    &__title {
+                        @include texts($primary1, 1.1em, bold);
+                    }
+                    &__description {
+                        @include texts($letter-color, 0.9em, bold);
+                    }
+                }
             }
         }
     }

@@ -2,7 +2,7 @@
     width: 100%;
     background-color: $primary1;
     text-align: center;
-    padding: 2em;
+    padding: $wrapper-space*2;
     &__social-media {
         width: 100%;
         color: #fff;
@@ -36,13 +36,49 @@
         }
     }
     button {
-        width: 160px;
-        height: 40px;
         margin-bottom: 1.5em;
-        @include texts($primary-bkcolor, 0.8em, 400);
+        @include buttons-style(160px, 40px, 0.8em);
     }
     span {
         display: block;
         @include texts($letter-color, 0.7em, bold);
+    }
+    @include breakpoint(laptop) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: "logo infoMenu button"
+                            "socials infoMenu rights";
+        padding: $wrapper-space*2 $wrapper-space*5;
+        svg {
+            grid-area: logo;
+            align-self: center;
+            justify-self: start;
+        }
+        &__social-media {
+            grid-area: socials;
+            align-self: start;
+            justify-self: start;
+            ul {
+                justify-content: flex-start;
+            }
+        }
+        &__info-links {
+            grid-area: infoMenu;
+        }
+        button {
+            grid-area: button;
+            align-self: end;
+            justify-self: end;
+        }
+        span {
+            grid-area: rights;
+            align-self: start;
+            justify-self: end;
+            @include texts($letter-color, 0.8em, bold);
+        }
+    }
+    @include breakpoint(desktop-lg) {
+        padding: $wrapper-space*2 $wrapper-space*10;
     }
 }

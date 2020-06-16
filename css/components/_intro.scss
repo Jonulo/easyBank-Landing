@@ -1,24 +1,10 @@
 main {
+    position: relative;
     width: 100%;
     height: auto;
     max-width: 100%;
     background-color: $primary-bkcolor;
-    overflow-x: hidden;
-    .images-secondary {
-        display: none;
-    }
-    @include breakpoint(tablet) {
-        .images-secondary {
-            display: block;
-            position: absolute;
-            width: 400px;
-            height: 500px;
-            top: -10px;
-            right: -70px;
-            background: url('../assets/image-mockups.png') no-repeat;
-            background-size: 100%;
-        }
-    }
+    overflow: hidden;
 }
 .main-wrap {
     position: relative;
@@ -43,6 +29,11 @@ main {
         }
         p {
             @include texts($letter-color, 0.8em, bold)
+        }
+        button {
+            margin: 15px 0;
+            padding: 10px 15px;
+            @include buttons-style(170px, 45px, 1em);                
         }
     }
     @include breakpoint(tablet) {
@@ -71,19 +62,39 @@ main {
             p {
                 @include texts($letter-color, 0.6em, bold)
             }
+            button {
+                margin: 15px 0;
+                padding: 10px 15px;
+                @include buttons-style(170px, 45px, 1em);                
+            }
+        }
+    }
+    @include breakpoint(tablet) {
+        padding: 0 $wrapper-space*5;
+        &__images {
+            margin-right: -5em;
         }
     }
     @include breakpoint(desktop-lg) {
         grid-template-rows: 650px;
+        padding: 0 $wrapper-space*10;
+        &__images {
+            margin-right: -10em;
+        }
     }
 }
-button {
-    width: 170px;
-    height: 45px;
-    margin: 15px 0;
-    background-image: linear-gradient(to right, $primary2 , $primary3);
-    border: none;
-    border-radius: 20px;
-    padding: 10px 15px;
-    @include texts($primary-bkcolor, 1em, 400);
+.images-secondary {
+    display: none;
+}
+@include breakpoint(tablet) {
+    .images-secondary {
+        display: block;
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        top: 20px;
+        right: 40px;
+        background: url('../assets/image-mockups.png') center center no-repeat;
+        background-size: 100%;
+    }
 }

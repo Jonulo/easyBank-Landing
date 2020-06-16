@@ -1,12 +1,14 @@
 mixin info-features(img, title, desc)
-    .info__feature
+    .features-wrap__feature
         img(src="./assets/icon-"+img+".svg")
         span=title
         p=desc
 mixin articles(img, autor, title, desc)
-    .article-wrapper
+    .article
         img(src="./assets/image-"+img+".jpg", alt="Article image")
-        .article
-            span.article__autor=autor
-            span.article__title=title
-            p.article__description=desc
+        .info-wrapper
+            span.info-wrapper__autor=autor
+            span.info-wrapper__title=title
+            p.info-wrapper__description=desc
+
+//- .article-wrapper

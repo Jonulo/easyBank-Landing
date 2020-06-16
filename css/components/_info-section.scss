@@ -9,23 +9,87 @@
     p {
         @include texts($letter-color, 0.8em, bold);
     }
-    &__feature {
+    .features-wrap {
         display: flex;
         flex-direction: column;
-        margin-top: 40px;
-        img {
-            align-self: center;
-            width: 60px;
-            display: block;
+        justify-content: space-evenly;
+        &__feature {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            img {
+                align-self: center;
+                width: 60px;
+                display: block;
+            }
+            span {
+                @include texts($primary1, 1.1em, bold);
+                padding: 20px 0;
+            }
+            p {
+                @include texts($letter-color, 0.8em, bold);
+                padding: 0 0.9em;
+                text-align: center;
+            }
         }
-        span {
-            @include texts($primary1, 1.1em, bold);
-            padding: 20px 0;
-        }
-        p {
+    }
+    @include breakpoint(tablet) {
+        text-align: left;
+        padding: 2.5em $wrapper-space*3;
+        .info-desc {
+            max-width: 65%;
             @include texts($letter-color, 0.8em, bold);
-            padding: 0 0.9em;
-            text-align: center;
+        }
+        .features-wrap {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            &__feature {
+                align-items: flex-start;
+                margin: 40px 15px;
+                img {
+                    align-self: flex-start;
+                }
+                span {
+                    @include texts($primary1, 0.9em, bold);
+                    padding: 10px 0;
+                }
+                p {
+                    text-align: left;
+                    padding: 0;
+                    @include texts($letter-color, 0.6em, bold);
+                }
+            }
+        }
+    }
+    @include breakpoint(laptop) {
+        padding: 2.5em $wrapper-space*5;
+        .features-wrap {
+            display: flex;
+            flex-direction: row;
+            margin-top: 40px;
+        }
+    }
+    @include breakpoint(desktop-lg) {
+        padding: 2.5em $wrapper-space*10;
+        .info-desc {
+            max-width: 65%;
+            @include texts($letter-color, 1.1em, bold);
+        }
+        .features-wrap {
+            &__feature {
+                align-items: flex-start;
+                margin: 40px 20px 40px 0px;
+                span {
+                    @include texts($primary1, 1.2em, bold);
+                    padding: 25px 0;
+                }
+                p {
+                    text-align: left;
+                    padding: 0;
+                    @include texts($letter-color, 1em, bold);
+                }
+            }
         }
     }
 }
