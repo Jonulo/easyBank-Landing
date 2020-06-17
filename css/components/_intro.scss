@@ -18,7 +18,7 @@ main {
         margin-bottom: 20px;
         background: url('../assets/image-mockups.png') center bottom no-repeat,
         url('../assets/bg-intro-mobile.svg') center no-repeat;
-        background-size: 325px, cover;
+        background-size: 320px, cover;
     }
     &__intro {
         flex-direction: column;
@@ -81,8 +81,9 @@ main {
                 @include texts($primary1, 1.7em, bold);
             }
             p {
-                padding-right: $wrapper-space*2;
-                @include texts($letter-color, 0.8em, bold)
+                padding-right: $wrapper-space*4;
+                max-width: 600px;
+                @include texts($letter-color, 0.9em, bold)
             }
             button:hover {
                 cursor: pointer;

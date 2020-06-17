@@ -610,7 +610,7 @@ body {
 }
 @media (min-width: 1440px) {
   .header {
-    height: 100px;
+    height: 80px;
     padding: 0 10em;
   }
   .header img {
@@ -665,7 +665,7 @@ main {
   margin: 0 -1em;
   margin-bottom: 20px;
   background: url("../assets/image-mockups.png") center bottom no-repeat, url("../assets/bg-intro-mobile.svg") center no-repeat;
-  background-size: 325px, cover;
+  background-size: 320px, cover;
 }
 .main-wrap__intro {
   flex-direction: column;
@@ -754,10 +754,11 @@ main {
     font-size: 1.7em;
   }
   .main-wrap__intro p {
-    padding-right: 2em;
+    padding-right: 4em;
+    max-width: 600px;
     color: #9698a6;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   .main-wrap__intro button:hover {
     cursor: pointer;
