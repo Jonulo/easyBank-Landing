@@ -4,7 +4,7 @@ main {
     height: auto;
     max-width: 100%;
     background-color: $primary-bkcolor;
-    overflow: hidden;
+    // overflow-x: hidden;
 }
 .main-wrap {
     position: relative;
@@ -33,7 +33,7 @@ main {
         button {
             margin: 15px 0;
             padding: 10px 15px;
-            @include buttons-style(170px, 45px, 1em);                
+            @include buttons-style(170px, 45px, 1em, 'false');                
         }
     }
     @include breakpoint(tablet) {
@@ -65,36 +65,85 @@ main {
             button {
                 margin: 15px 0;
                 padding: 10px 15px;
-                @include buttons-style(170px, 45px, 1em);                
+                @include buttons-style(170px, 45px, 1em, 'false');                
             }
         }
     }
-    @include breakpoint(tablet) {
+    @include breakpoint(laptop) {
+        grid-template-columns: 1fr 380px;
         padding: 0 $wrapper-space*5;
         &__images {
             margin-right: -5em;
+            background-position: left -50px top -180px;
+        }
+        &__intro {
+            h1 {
+                @include texts($primary1, 1.7em, bold);
+            }
+            p {
+                padding-right: $wrapper-space*2;
+                @include texts($letter-color, 0.8em, bold)
+            }
+            button:hover {
+                cursor: pointer;
+                @include buttons-style(170px, 45px, 1em, 'true');
+            }
         }
     }
     @include breakpoint(desktop-lg) {
+        grid-template-columns: 1fr 500px;
         grid-template-rows: 650px;
         padding: 0 $wrapper-space*10;
         &__images {
             margin-right: -10em;
+            background-position: left -50px top -280px;
+        }
+        &__intro {
+            h1 {
+                @include texts($primary1, 2em, bold);
+            }
+            p {
+                padding-right: $wrapper-space*2;
+                @include texts($letter-color, 1.2em, bold)
+            }
+            button {
+                margin: 15px 0;
+                padding: 10px 15px;
+                @include buttons-style(180px, 50px, 1em, 'false');                
+            }
+            button:hover {
+                cursor: pointer;
+                @include buttons-style(180px, 50px, 1em, 'true');
+            }
         }
     }
 }
-.images-secondary {
+main img {
     display: none;
 }
 @include breakpoint(tablet) {
-    .images-secondary {
+    main img {
         display: block;
         position: absolute;
-        width: 300px;
-        height: 400px;
-        top: 20px;
-        right: 40px;
-        background: url('../assets/image-mockups.png') center center no-repeat;
-        background-size: 100%;
+        width: 400px;
+        height: 500px;
+        top: -65px;
+        right: -70px;
+    }
+}
+@include breakpoint(laptop) {
+    main img {
+        width: 500px;
+        height: 600px;
+        top: -80px;
+        right: -85px;
+    }
+}
+@include breakpoint(desktop-lg) {
+    main img {
+        width: 700px;
+        height: 900px;
+        top: -120px;
+        right: -120px;
     }
 }

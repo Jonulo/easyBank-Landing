@@ -28,16 +28,31 @@
     }
     &__info-links {
         @extend .footer__social-media;
-        ul {
-            display: block;
-            li {
-                padding: 0.3em 0;
+        &--first {
+            ul {
+                display: block;
+                margin: 0;
+                padding: 0;
+                li {
+                    list-style: none;
+                    padding: 0.3em 0;
+                    a {
+                        text-decoration: none;
+                        @include texts($default-bkcolor, 0.8em, bold);
+                    }
+                }
+            }
+        }
+        &--second {
+            @extend .footer__info-links--first;
+            ul {
+                margin-bottom: $wrapper-space;
             }
         }
     }
     button {
         margin-bottom: 1.5em;
-        @include buttons-style(160px, 40px, 0.8em);
+        @include buttons-style(160px, 40px, 0.8em, 'false');
     }
     span {
         display: block;
@@ -45,10 +60,11 @@
     }
     @include breakpoint(laptop) {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: auto auto auto 1fr;
         grid-template-rows: repeat(2, auto);
-        grid-template-areas: "logo infoMenu button"
-                            "socials infoMenu rights";
+        grid-template-areas: "logo infoMenu infoMenuu button"
+                            "socials infoMenu infoMenuu rights";
+        gap: 0px $wrapper-space*2;
         padding: $wrapper-space*2 $wrapper-space*5;
         svg {
             grid-area: logo;
@@ -61,24 +77,67 @@
             justify-self: start;
             ul {
                 justify-content: flex-start;
+                li a:hover {
+                    cursor: pointer;
+                }
             }
         }
         &__info-links {
-            grid-area: infoMenu;
+            &--first {
+                grid-area: infoMenu;
+                align-self: start;
+                justify-self: start;
+            }
+            &--second {
+                grid-area: infoMenuu;
+                align-self: start;
+                justify-self: start;
+            }
+            &--first ul li a:hover  {
+                cursor: pointer;
+                color: $primary2;
+            }
         }
         button {
             grid-area: button;
             align-self: end;
             justify-self: end;
+            margin: 0;
+        }
+        button:hover {
+            cursor: pointer;
+            @include buttons-style(160px, 40px, 1em, 'true');
         }
         span {
             grid-area: rights;
-            align-self: start;
+            align-self: center;
             justify-self: end;
             @include texts($letter-color, 0.8em, bold);
         }
     }
     @include breakpoint(desktop-lg) {
         padding: $wrapper-space*2 $wrapper-space*10;
+        gap: 0px $wrapper-space*5;
+        &__social-media {
+            ul li a img{
+                width: $wrapper-space*1.5;
+            }
+        }
+        &__info-links {
+            &--first {
+                ul li a {
+                    @include texts($default-bkcolor, 0.8em, bold);
+                }
+            }
+        }
+        button {
+            @include buttons-style(180px, 45px, 0.8em, 'false');
+        }
+        button:hover {
+            @include buttons-style(220px, 55px, 1em, 'true');
+        }
+        span {
+            @include texts($letter-color, 0.8em, bold);
+        }
     }
 }

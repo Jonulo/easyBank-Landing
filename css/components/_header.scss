@@ -30,7 +30,7 @@
             }
             li a{
                 text-decoration: none;
-                @include texts($letter-color, 1rem, bold);
+                @include texts($letter-color, 1em, bold);
             }
         }
         @include breakpoint(laptop) {
@@ -73,11 +73,30 @@
         padding: $wrapper-space $wrapper-space*3;
     }
     @include breakpoint(laptop) {
-        padding: $wrapper-space $wrapper-space*5;
+        height: 60px;
+        padding: 0 $wrapper-space*5;
         align-items: center;
         img {
-            width: 110px;
-            height: 20px;
+            width: 130px;
+            height: 25px;
+        }
+        .header-wrapper {
+            height: 100%;
+            &__menu {
+                height: 100%;
+                li {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                }
+                li:hover {
+                    border-bottom: 5px solid $primary2;
+                    cursor: pointer;
+                    a {
+                        @include texts(black, 1.2em, bold);
+                    }
+                }
+            }
         }
         &__icon-menu {
             display: none;
@@ -86,10 +105,31 @@
             display: block;
             margin: 0;
             padding: 0;
-            @include buttons-style(140px, 35px, 0.8em);
+            @include buttons-style(140px, 35px, 0.8em, 'false');
+        }
+        button:hover {
+            cursor: pointer;
+            @include buttons-style(140px, 35px, 0.8em, 'true');
         }
     }
     @include breakpoint(desktop-lg) {
-        padding: $wrapper-space $wrapper-space*10;
+        height: 100px;
+        padding: 0 $wrapper-space*10;
+        img {
+            width: 130px;
+            height: 25px;
+        }
+        .header-wrapper {
+            &__menu li a {
+                @include texts($letter-color, 1em, bold);
+            }
+        }
+        button {
+            @include buttons-style(160px, 45px, 1em, 'false');
+        }
+        button:hover {
+            cursor: pointer;
+            @include buttons-style(160px, 45px, 1em, 'true');
+        }
     }
 }

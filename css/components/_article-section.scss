@@ -24,7 +24,7 @@
                 display: flex;
                 flex-direction: column;
                 text-align: left;
-                padding: 0 $wrapper-space*2 $wrapper-space*2 $wrapper-space*2;
+                padding: 0 $wrapper-space $wrapper-space $wrapper-space;
                 &__autor {
                     padding-top: $wrapper-space*2;
                     @include texts($letter-color, 0.6em, bold);
@@ -58,23 +58,38 @@
     }
     @include breakpoint(laptop) {
         padding: 2.5em $wrapper-space*5;
+        .article-wrapper .article {
+            width: 400px;
+            .info-wrapper {
+                &__title:hover {
+                    cursor: pointer;
+                    @include texts($primary2, 0.9em, bold);
+                }
+            }
+        }
     }
     @include breakpoint(desktop-lg) {
         padding: 2.5em $wrapper-space*10;
         .article-wrapper {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             .article {
-                margin: 40px 20px 40px 0px;
+                margin: 40px 30px 40px 0px;
+                width: 350px;
                 .info-wrapper {
                     &__autor {
-                        @include texts($letter-color, 0.8em, bold);
+                        @include texts($letter-color, 0.7em, bold);
                     }
                     &__title {
-                        @include texts($primary1, 1.1em, bold);
+                        @include texts($primary1, 1em, bold);
+                    }
+                    &__title:hover {
+                        cursor: pointer;
+                        @include texts($primary2, 1em, bold);
                     }
                     &__description {
-                        @include texts($letter-color, 0.9em, bold);
+                        @include texts($letter-color, 0.8em, bold);
                     }
                 }
             }

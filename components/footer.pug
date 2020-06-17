@@ -15,9 +15,13 @@ footer.footer
             each icon in socialIcons
                 li
                     a(href="#"): img(src=icon)
-    .footer__info-links
+    .footer__info-links--first
         ul
-            each info in footerMenu
+            each info in firstFooterLinks
+                li: a(href="#")=info
+    .footer__info-links--second
+        ul
+            each info in secondFooterLinks
                 li: a(href="#")=info
     button Request Invite
     span Easybank. All Rights Reserved

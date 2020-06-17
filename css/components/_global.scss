@@ -15,17 +15,26 @@ $wrapper-space: 1em;
     font-weight: $font-weight;
     font-size: $size;
 }
-@mixin buttons-style($width, $height, $text-size) {
+@mixin buttons-style($width, $height, $text-size, $flag) {
     width: $width;
     height: $height;
-    background-image: linear-gradient(to right, $primary2 , $primary3);
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     @include texts($primary-bkcolor, $text-size, 400);
+    @if $flag == 'false' {
+        background-image: linear-gradient(to right, $primary2 , $primary3);
+    } @else {
+        background-image: linear-gradient(to right, hsla(136, 65%, 51%, 0.5) , hsla(192, 70%, 51%, 0.5));
+    }
+}
+
+html {
+    overflow-x: hidden;
 }
 
 body {
     position: relative;
     font-size: 18px!important;
     font-family: $font;
+    overflow: hidden;
 }
